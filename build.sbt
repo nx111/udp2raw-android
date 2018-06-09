@@ -3,7 +3,7 @@ scalaVersion := "2.11.11"
 enablePlugins(AndroidApp)
 android.useSupportVectors
 
-name := "obfs-local"
+name := "udp2raw"
 organization := "com.github.shadowsocks"
 version := "0.0.5"
 versionCode := Some(5)
