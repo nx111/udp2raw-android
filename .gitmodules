@@ -1,16 +1,3 @@
-[submodule "src/main/jni/libancillary"]
-	path = src/main/jni/libancillary
-	url = https://github.com/shadowsocks/libancillary.git
-	branch = shadowsocks-android
-[submodule "src/main/jni/simple-obfs"]
-	path = src/main/jni/simple-obfs
-	url = https://github.com/shadowsocks/simple-obfs.git
-[submodule "src/main/jni/libudns"]
-	path = src/main/jni/libudns
-	url = https://github.com/shadowsocks/libudns.git
-[submodule "src/main/jni/libsodium"]
-	path = src/main/jni/libsodium
-	url = https://github.com/shadowsocks/libsodium.git
-[submodule "src/main/jni/libev"]
-	path = src/main/jni/libev
-	url = https://github.com/shadowsocks/libev.git
+[submodule "src/main/jni/udp2raw-tunnel"]
+	path = src/main/jni/udp2raw-tunnel
+	url = https://github.com/wangyu-/udp2raw-tunnel.git

@@ -1,15 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.github.shadowsocks.plugin.obfs_local">
+          package="com.github.shadowsocks.plugin.udp2raw">
     <uses-feature android:name="android.hardware.touchscreen"
                   android:required="false"/>
     <uses-sdk android:minSdkVersion="19"
               android:targetSdkVersion="25"/>
     <application android:allowBackup="false"
                  android:icon="@mipmap/ic_launcher"
-                 android:label="@string/simple_obfs_name">
+                 android:label="udp2raw">
         <provider android:name=".BinaryProvider"
                   android:exported="true"
-                  android:authorities="com.github.shadowsocks.plugin.obfs_local.BinaryProvider">
+                  android:authorities="com.github.shadowsocks.plugin.udp2raw.BinaryProvider">
             <intent-filter>
                 <action android:name="com.github.shadowsocks.plugin.ACTION_NATIVE_PLUGIN"/>
             </intent-filter>
@@ -17,20 +17,21 @@
                 <action android:name="com.github.shadowsocks.plugin.ACTION_NATIVE_PLUGIN"/>
                 <data android:scheme="plugin"
                       android:host="com.github.shadowsocks"
-                      android:pathPrefix="/obfs-local"/>
+                      android:pathPrefix="/udp2raw"/>
             </intent-filter>
             <meta-data android:name="com.github.shadowsocks.plugin.id"
-                       android:value="obfs-local"/>
+                       android:value="udp2raw"/>
             <meta-data android:name="com.github.shadowsocks.plugin.default_config"
-                       android:value="obfs=http"/>
+                       android:value="-c -l0.0.0.0:3333  -r 44.55.66.77:4096 -a -k passwd --raw-mode faketcp"/>
         </provider>
-        <activity android:name=".ConfigActivity">
+        <activity android:name=".HelpCallback"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
-                <action android:name="com.github.shadowsocks.plugin.ACTION_CONFIGURE"/>
+                <action android:name="com.github.shadowsocks.plugin.ACTION_HELP"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:scheme="plugin"
                       android:host="com.github.shadowsocks"
-                      android:path="/obfs-local"/>
+                      android:path="/udp2raw"/>
             </intent-filter>
         </activity>
     </application>
